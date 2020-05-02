@@ -4,12 +4,12 @@
 // the code from moment.js for day and time generation
 $(document).ready(function () {
     var today = moment().format('MMMM Do YYYY, h:mm:ss a');
-    today.append();
+    var date = $("#date-field");
+    date.text(today);
 })
-var date = $("#date-field");
-date.text(today);
-//Generate time blocks to user IN HTML???????
 
+
+//Generate time blocks to user IN HTML???????
 
 
 
