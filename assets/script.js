@@ -3,7 +3,7 @@
 //Generate current day
 // the code from moment.js for day and time generation
 $(document).ready(function () {
-    var today = moment().format('MMMM Do YYYY, h:mm:ss a');
+    var today = moment().format('MMMM Do YYYY, h:mm:ss a')
     var date = $("#date-field");
     date.text(today);
 })

@@ -26,37 +26,16 @@
         <div class="time-block">
             <h3 id="click-me">CLICK ME!</h3>
             <!-- Timeblocks go here -->
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="row">
-                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                            <div class="hour" style="width: 100%;">
-                                <div class="card-body" style="width: 100%;">
-                                    Hour
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                            <div class="events-field" style="width: 100%;">
-                                <!-- replicated from to-do render activity-->
-                                <div class="card-body" style="width: 100%;">
-                                    <form id="event-form" method="POST">
-                                        <label for="event-text"></label>
-                                        <input type="text" placeholder="text field" name="event-text" id="event-text" />
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                            <div class="save-field" style="width: 100%;">
-                                <div class="card-body" style="width: 100%;">
-                                    <div class="saveBtn">Save</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
                 </div>
+                <input type="text" class="form-control" placeholder="Recipient's username"
+                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Button</button>
+                </div>
+
             </div>
 
         </div>
