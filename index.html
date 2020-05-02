@@ -23,9 +23,41 @@
         <div id="date-field">
 
         </div>
-        <div id="timeblocks">
+        <div class="timeblocks">
             <h3 id="click-me">CLICK ME!</h3>
             <!-- Timeblocks go here -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <div class="time-field" style="width: 100%;">
+                                <div class="card-body" style="width: 100%;">
+                                    Time
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                            <div class="events-field" style="width: 100%;">
+                                <!-- replicated from to-do render activity-->
+                                <div class="card-body" style="width: 100%;">
+                                    <form id="event-form" method="POST">
+                                        <label for="event-text"></label>
+                                        <input type="text" placeholder="text field" name="event-text" id="event-text" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <div class="save-field" style="width: 100%;">
+                                <div class="card-body" style="width: 100%;">
+                                    <div class="save-button">Save</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
         </div>
     </div>
