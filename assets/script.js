@@ -10,7 +10,17 @@ $(document).ready(function () {
 
 
 //Generate time blocks to user IN HTML???????
+var createRow = function () {
+    var tRow = $('<tr>');
 
+    var timeTd = $('<td>').text;
+    var textAreaTd = $('<td>').text;
+    var saveTd = $('<td>').text;
+
+    tRow.append(timeTd, textAreaTd, saveTd);
+    // Append the table row to the table body
+    $('tbody').append(tRow);
+};
 
 
 //**********TIMEBLOCKS FOR THAT DAY ************ */
