@@ -4,25 +4,11 @@
 // the code from moment.js for day and time generation
 $(document).ready(function () {
     var today = moment().format('MMMM Do YYYY, h:mm:ss a')
+    console.log(moment)
     var date = $("#date-field");
+    console.log(date)
     date.text(today);
 })
-
-
-//Generate time blocks to user IN HTML???????
-$("date-field").append(
-var createRow = function () {
-    var tRow = $('<tr>');
-
-    var timeTd = $('<td>').text;
-    var textAreaTd = $('<td>').text;
-    var saveTd = $('<td>').text;
-
-    tRow.append(timeTd, textAreaTd, saveTd);
-    // Append the table row to the table body
-    $('tbody').append(tRow);
-    )
-};
 
 
 //**********TIMEBLOCKS FOR THAT DAY ************ */
@@ -31,6 +17,33 @@ var createRow = function () {
 //current hour color
 //past hour color
 //future hour color
+//Generate time blocks to user IN HTML???????
+
+//Trying to append per https://api.jquery.com/append/ and Class activities
+
+var hourTime = moment("HH:mm:ss").format("h:mm:ss a");
+
+$("#date-field").append(`
+    <div class="row">
+    <div class="hour">${hourTime}</div>
+    <textarea class="textfield"></textarea>
+    <button class="saveBtn">'Save'</button>
+   // </div>
+`)
+
+// createRow = function () {
+//     var tRow = $('<tr>');
+
+//     var timeTd = $('<td>').text;
+//     var textAreaTd = $('<td>').text;
+//     var saveTd = $('<td>').text;
+
+//     tRow.append(timeTd, textAreaTd, saveTd);
+//     // Append the table row to the table body
+//     $('tbody').append(tRow);
+
+// };
+
 
 
 //******************ENTER AND EDIT THE EVENT TO THE CALENDER******* */
@@ -41,26 +54,33 @@ var createRow = function () {
 
 //on click on the time block
 //pulled .on(click) from onclick activity in week 5
-$(document).ready(function () {
-    $("#click-me").on("click", function () {
-        alert("I've been clicked!");
-    });
-});
+// $(document).ready(function () {
+//     $("#click-me").on("click", function () {
+//         alert("I've been clicked!");
+//     });
+// });
 
 //************SAVE THE EVENT TO CALENDAR ********* */
 //Save Button appends the entered text to the timeblock
 //on click save button to push to local storage
-$(document).on("click", "saveBtn", function () {
-    console.log(document);
-    console.log(saveBtn);
-    if ($("input").first().val() === "correct") {
-        $("span").text("Validated...").show();
-        return;
-    }
+$(document).on("click", ".saveBtn", function () {
+    var hour = $(this).prev().attr("hour");
+    var event = $(this).prev().val();
 
-    $("span").text("Not valid!").show().fadeOut(1000);
-    event.preventDefault();
+    localStorage.setItem(hour, event);
+
 });
+// $(document).on("click", "saveBtn", function () {
+//     console.log(document);
+//     console.log(saveBtn);
+//     if ($("input").first().val() === "correct") {
+//         $("span").text("Validated...").show();
+//         return;
+//     }
+
+//     $("span").text("Not valid!").show().fadeOut(1000);
+//     event.preventDefault();
+// });
 //     $(document).on('click', function (event) {
 //         localStorage.setItem('saved-text', JSON.stringify(savedEvent));
 //     });
