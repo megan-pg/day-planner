@@ -10,6 +10,7 @@ $(document).ready(function () {
 
 
 //Generate time blocks to user IN HTML???????
+$("date-field").append(
 var createRow = function () {
     var tRow = $('<tr>');
 
@@ -20,6 +21,7 @@ var createRow = function () {
     tRow.append(timeTd, textAreaTd, saveTd);
     // Append the table row to the table body
     $('tbody').append(tRow);
+    )
 };
 
 
@@ -48,6 +50,40 @@ $(document).ready(function () {
 //************SAVE THE EVENT TO CALENDAR ********* */
 //Save Button appends the entered text to the timeblock
 //on click save button to push to local storage
+$(document).on("click", "saveBtn", function () {
+    console.log(document);
+    console.log(saveBtn);
+    if ($("input").first().val() === "correct") {
+        $("span").text("Validated...").show();
+        return;
+    }
+
+    $("span").text("Not valid!").show().fadeOut(1000);
+    event.preventDefault();
+});
+//     $(document).on('click', function (event) {
+//         localStorage.setItem('saved-text', JSON.stringify(savedEvent));
+//     });
+// }
+// function saveText(text) {
+//     // store the score, number of boxes, and the time in local storage
+
+//     // create a new score object with the three values that we want
+//     var enterdText = {
+//         text: [], //get the name from an input field
+//     };
+
+//     // add this saved string to the current scores
+//     // get all of the current scores from local storage
+//     var textField = getText();
+//     // push our scoreObject onto the existing scores array
+//     enteredText.push(text);
+//     // JSON.stringify to turn our array into a string
+//     var textJSON = JSON.stringify(textField);
+//     console.log(textJSON)
+//     // store our new JSON string in local store
+//     localStorage.setItem('event', textJSON);
+// }
 
 
 //**************LOCAL STORAGE ********************* */
