@@ -28,30 +28,16 @@ for (var i = 8; i <= 18; i++) {
     } else {
         timeDisplay = "";
     }
-    //Trying to append per https://api.jquery.com/append/ and Class activities
+    //Trying to append per https://api.jquery.com/append/ and Class activities like the movie activity from
     $("#date-field").append(`
     <div class="row">
     <div class="hour">${hourTime}</div>
-    <textarea class="textarea">${event}</textarea>
-    <button class="saveBtn">'Save'</button>
-   // </div>
+    <textarea class="textarea">${""}</textarea>
+    <button class="saveBtn">Save</button>
+    </div>
 `)
     console.log("#date-field".append);
 }
-// createRow = function () {
-//     var tRow = $('<tr>');
-
-//     var timeTd = $('<td>').text;
-//     var textAreaTd = $('<td>').text;
-//     var saveTd = $('<td>').text;
-
-//     tRow.append(timeTd, textAreaTd, saveTd);
-//     // Append the table row to the table body
-//     $('tbody').append(tRow);
-
-// };
-
-
 
 //******************ENTER AND EDIT THE EVENT TO THE CALENDER******* */
 //text enter field
