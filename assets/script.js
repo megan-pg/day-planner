@@ -5,7 +5,7 @@
 $(document).ready(function () {
     var today = moment().format('MMMM Do YYYY, h:mm:ss a')
     console.log(moment)
-    var date = $("#time-block");
+    var date = $(".time-block");
     console.log(date)
     date.text(today);
 })
