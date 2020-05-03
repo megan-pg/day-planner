@@ -19,18 +19,25 @@ $(document).ready(function () {
 //future hour color
 //Generate time blocks to user IN HTML???????
 
-//Trying to append per https://api.jquery.com/append/ and Class activities
 
-var hourTime = moment("HH:mm:ss").format("h:mm:ss a");
-
-$("#date-field").append(`
+for (var i = 8; i <= 18; i++) {
+    var hourTime = moment(i, "HH:mm:ss").format("h:mm:ss a");
+    var timeDisplay;
+    if (localStorage.getItem(moment(i, "HH:mm:ss").format("h:mm:ss"))) {
+        timeDisplay = localStorage.getItem(moment(i, "HH:mm:ss").format("h:mm:ss"));
+    } else {
+        timeDisplay = "";
+    }
+    //Trying to append per https://api.jquery.com/append/ and Class activities
+    $("#date-field").append(`
     <div class="row">
     <div class="hour">${hourTime}</div>
-    <textarea class="textfield"></textarea>
+    <textarea class="textarea">${event}</textarea>
     <button class="saveBtn">'Save'</button>
    // </div>
 `)
-
+    console.log("#date-field".append);
+}
 // createRow = function () {
 //     var tRow = $('<tr>');
 
